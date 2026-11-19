@@ -1,0 +1,24 @@
+# Walter Noack — mellamowalter.cl
+
+Walter Noack es ingeniero ambiental y desarrollador de soluciones tecnológicas radicado en Temuco, Chile.
+Consultor en Digitalización e Innovación para PyMEs con más de 10 años de experiencia en consultoría ambiental.
+
+## Servicios
+- Digitalización de procesos: automatización de flujos operativos manuales
+- Herramientas a medida: desarrollo de software específico para el problema
+- Huella de carbono y gestión ambiental: medición, reducción y gestión para empresas
+- Desarrollo web: sitios y aplicaciones en React
+
+## Diagnóstico inicial (punto de partida para PyMEs)
+- Sesión de 45 minutos + documento con causa raíz y propuesta de solución
+- Precio: 0,75 UF + IVA (~$30.000 CLP), descontable si se continúa con implementación
+- URL: https://www.mellamowalter.cl/diagnostico
+
+## Talleres de Innovación para Educación Técnica
+- Dirigidos a liceos técnico-profesionales: directivos, docentes y estudiantes
+- Contenidos: Design Thinking, prototipado, innovación en el aula, vinculación con el medio
+- URL: https://www.mellamowalter.cl/talleres
+
+## Contacto
+- Email: hola@wnoack.cl
+- Web: https://www.mellamowalter.cl

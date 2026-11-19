@@ -2,50 +2,76 @@ import { Link } from 'react-router-dom';
 import {
   ArrowPathIcon,
   CodeBracketIcon,
-  SparklesIcon,
   AcademicCapIcon,
   MagnifyingGlassIcon,
 } from '@heroicons/react/24/outline';
+
+function LeafIcon({ className, style }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} style={style} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" stroke="#2F6B4F" />
+      <path d="M12 21V10" stroke="#2F6B4F" />
+    </svg>
+  );
+}
 
 const servicios = [
   {
     Icon: ArrowPathIcon,
     titulo: 'Digitalización de procesos',
     desc: 'Convierte días de planilla en minutos automatizados.',
+    iconBg: 'var(--icon-bg-blue)',
+    iconColor: 'var(--brand)',
+    borderTop: 'var(--brand)',
   },
   {
     Icon: CodeBracketIcon,
     titulo: 'Herramientas a medida',
     desc: 'Software que encaja exactamente en tu operación.',
+    iconBg: 'var(--icon-bg-blue)',
+    iconColor: 'var(--brand)',
+    borderTop: 'var(--brand)',
   },
   {
-    Icon: SparklesIcon,
+    Icon: LeafIcon,
     titulo: 'Huella de carbono y gestión ambiental',
     desc: 'Mide, reduce y gestiona el impacto ambiental de tu empresa.',
+    iconBg: 'var(--icon-bg-green)',
+    iconColor: 'var(--forest)',
+    borderTop: 'var(--forest)',
   },
   {
     Icon: AcademicCapIcon,
     titulo: 'Innovación y talleres',
     desc: 'Incorpora metodologías de innovación en tu equipo o institución.',
+    iconBg: 'rgba(14,27,61,0.08)',
+    iconColor: '#0E1B3D',
+    borderTop: '#0E1B3D',
   },
 ];
 
 const casos = [
   {
-    foto: '/images/caso-residuos.jpg',
-    fotoAlt: 'Contenedores de reciclaje',
+    foto: '/assets/caso-residuos.webp',
+    fotoAlt: 'Contenedores y cajas de residuos, imagen referencial',
     tag: 'Automatización de residuos',
+    tagStyle: { background: '#E4F0EA', color: '#2F6B4F' },
     desc: 'Contabilización mensual de residuos: de planillas de miles de filas que tomaban días, a una plataforma que lo resuelve en minutos.',
     metrica: '-95%',
     detalle: 'en tiempo de proceso',
+    franjaGradient: 'linear-gradient(135deg, #2F6B4F 0%, #245A41 100%)',
+    detalleColor: '#E4F0EA',
   },
   {
-    foto: '/images/caso-cotizador.jpg',
-    fotoAlt: 'Bodega de insumos industriales',
+    foto: '/assets/caso-cotizador.webp',
+    fotoAlt: 'Repuestos y piezas de insumos industriales, imagen referencial',
     tag: 'Cotizador centralizado',
+    tagStyle: { background: 'var(--icon-bg-blue)', color: 'var(--brand)' },
     desc: 'Empresa de insumos industriales con cotizaciones repartidas en múltiples Excel. Un cotizador a medida centralizó todo en una sola plataforma.',
     metrica: '1 plataforma',
     detalle: 'en vez de muchos Excel sueltos',
+    franjaGradient: 'linear-gradient(135deg, #0E1B3D 0%, #16295C 100%)',
+    detalleColor: '#C9D3EA',
   },
 ];
 
@@ -63,8 +89,8 @@ function Home() {
       {/* 1 — Hero */}
       <section className="py-20" style={{ background: 'var(--gradient-night)' }}>
         <div className="container-site">
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2">
+          <div className="flex flex-col md:flex-row items-center" style={{ gap: '56px' }}>
+            <div style={{ flex: 1, minWidth: 0 }}>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white" style={{ lineHeight: 1.15 }}>
                 ¡Hola!<br />Me llamo Walter
               </h1>
@@ -82,13 +108,15 @@ function Home() {
                 <Link to="/contacto" className="btn-dark-primary">Conversemos</Link>
               </div>
             </div>
-            <div className="md:w-1/2 flex justify-center">
-              <img
-                src="/assets/foto-perfil.jpg"
-                alt="Walter Noack"
-                className="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover"
-                style={{ border: '3px solid rgba(255,255,255,0.15)' }}
-              />
+            <div className="flex justify-end items-center" style={{ flexShrink: 0 }}>
+              <div style={{ width: '480px', height: '480px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '6px solid #DCE6FF', boxSizing: 'border-box' }}>
+                <img
+                  src="/assets/hero-walter.jpg"
+                  alt="Walter Noack, ingeniero ambiental y desarrollador"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: 'center', filter: 'saturate(0.85) brightness(0.95)' }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -101,13 +129,13 @@ function Home() {
             ¿En qué puedo ayudarte?
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {servicios.map(({ Icon, titulo, desc }) => (
-              <div key={titulo} className="card-base card-hover card-base-blue">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'var(--icon-bg-blue)' }}>
-                  <Icon className="w-5 h-5" style={{ color: 'var(--brand)' }} />
+            {servicios.map(({ Icon, titulo, desc, iconBg, iconColor, borderTop, cardStyle, tituloColor, descColor }) => (
+              <div key={titulo} className="card-base card-hover" style={{ borderTop: `4px solid ${borderTop}`, ...cardStyle }}>
+                <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: iconBg }}>
+                  <Icon className="w-5 h-5" style={{ color: iconColor }} />
                 </div>
-                <h3 className="font-semibold mb-2 text-sm" style={{ color: 'var(--text-primary)' }}>{titulo}</h3>
-                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
+                <h3 className="font-semibold mb-2 text-sm" style={{ color: tituloColor || 'var(--text-primary)' }}>{titulo}</h3>
+                <p className="text-sm" style={{ color: descColor || 'var(--text-secondary)' }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -117,33 +145,35 @@ function Home() {
       {/* 3 — Casos reales */}
       <section className="py-16" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
-          <div className="flex items-center justify-between mb-10">
+          <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>Casos reales</h2>
             <Link to="/portafolio" className="btn-primary text-sm">Ver portafolio</Link>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {casos.map(({ foto, fotoAlt, tag, desc, metrica, detalle }) => (
-              <div key={tag} className="card-base overflow-hidden p-0">
+          <p className="mb-8" style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Imágenes referenciales</p>
+          <div className="grid md:grid-cols-2 gap-6 items-stretch">
+            {casos.map(({ foto, fotoAlt, tag, tagStyle, desc, metrica, detalle, franjaGradient, detalleColor }) => (
+              <div key={tag} className="flex flex-col overflow-hidden" style={{ border: '1px solid var(--border)', borderRadius: '8px' }}>
                 {/* Foto */}
-                <div className="h-44 w-full overflow-hidden" style={{ background: 'var(--night-2)' }}>
+                <div className="relative w-full overflow-hidden" style={{ height: '180px', background: 'var(--night-2)', borderBottom: '1px solid #E1E7F3' }}>
                   <img
                     src={foto}
                     alt={fotoAlt}
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover object-center"
                     onError={(e) => { e.target.style.display = 'none'; }}
                   />
+                  <div className="absolute inset-0" style={{ background: 'rgba(14,27,61,0.15)' }} />
                 </div>
                 {/* Contenido */}
-                <div className="p-6">
-                  <span className="inline-block text-xs font-semibold px-2 py-1 rounded mb-3" style={{ background: 'var(--icon-bg-blue)', color: 'var(--brand)' }}>
+                <div className="p-6 flex-1">
+                  <span className="inline-block text-xs font-semibold px-2 py-1 rounded mb-3" style={tagStyle}>
                     {tag}
                   </span>
-                  <p className="text-sm mb-4" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
+                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
                 </div>
-                {/* Metrica */}
-                <div className="px-6 py-4" style={{ background: 'var(--brand)' }}>
+                {/* Franja resultado */}
+                <div style={{ background: franjaGradient, padding: '20px 28px' }}>
                   <span className="text-2xl font-bold text-white">{metrica}</span>
-                  <span className="text-sm text-white ml-2 opacity-80">{detalle}</span>
+                  <span className="text-sm ml-2" style={{ color: detalleColor }}>{detalle}</span>
                 </div>
               </div>
             ))}
@@ -165,7 +195,7 @@ function Home() {
         {/* Foto — reemplazar src cuando esté lista */}
         <div className="md:w-1/2 min-h-64 overflow-hidden" style={{ background: 'var(--night-2)' }}>
           <img
-            src="/images/banda-foto.jpg"
+            src="/assets/codesser-buena_res.png"
             alt="Walter Noack"
             className="w-full h-full object-cover"
             onError={(e) => { e.target.style.display = 'none'; }}
@@ -239,7 +269,7 @@ function Home() {
           <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
             Cuéntame qué necesitas y vemos cómo abordarlo.
           </p>
-          <Link to="/contacto" className="btn-dark-secondary">
+          <Link to="/contacto" className="btn-dark-primary">
             Conversemos
           </Link>
         </div>

@@ -97,9 +97,9 @@ body {
 .btn-dark-primary {
   display: inline-block;
   background: #fff;
-  color: var(--night);
+  color: #1B4FC4;
   font-weight: 700;
-  padding: 12px 24px;
+  padding: 14px 28px;
   border-radius: var(--radius);
   border: 2px solid transparent;
   transition: opacity 0.15s;

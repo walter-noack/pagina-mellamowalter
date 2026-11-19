@@ -5,12 +5,20 @@ import {
   CodeBracketIcon,
   GlobeAltIcon,
   MagnifyingGlassIcon,
-  SparklesIcon,
   ChatBubbleLeftEllipsisIcon,
   ClipboardDocumentCheckIcon,
   WrenchScrewdriverIcon,
   HandThumbUpIcon,
 } from '@heroicons/react/24/outline';
+
+function LeafIcon({ className, style }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" className={className} style={style} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" stroke="#2F6B4F" />
+      <path d="M12 21V10" stroke="#2F6B4F" />
+    </svg>
+  );
+}
 
 const servicios = [
   {
@@ -28,7 +36,7 @@ const servicios = [
     variante: 'blue',
   },
   {
-    Icon: SparklesIcon,
+    Icon: LeafIcon,
     titulo: 'Huella de carbono y gestión ambiental',
     problema: 'No sabes cuánto impacto genera tu empresa ni por dónde reducirlo.',
     entregable: 'Medición de la huella de carbono y un plan de gestión ambiental.',
@@ -243,7 +251,7 @@ function Servicios() {
             <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>
               Cuéntame qué necesitas y vemos cómo abordarlo.
             </p>
-            <Link to="/contacto" className="btn-dark-secondary">Conversemos</Link>
+            <Link to="/contacto" className="btn-dark-primary">Conversemos</Link>
           </div>
         </section>
 

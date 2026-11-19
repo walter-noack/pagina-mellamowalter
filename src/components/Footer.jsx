@@ -18,7 +18,7 @@ function InstagramIcon() {
 
 const navLinks = [
   { to: '/',           label: 'Inicio' },
-  { to: '/sobre-mi',   label: 'Sobre Mi' },
+  { to: '/sobre-mi',   label: 'Sobre mí' },
   { to: '/servicios',  label: 'Servicios' },
   { to: '/portafolio', label: 'Portafolio' },
   { to: '/talleres',   label: 'Talleres' },
@@ -45,7 +45,7 @@ function Footer() {
 
           {/* Navegacion */}
           <div>
-            <p className="text-sm font-semibold text-white mb-3">Navegacion</p>
+            <p className="text-sm font-semibold text-white mb-3">Navegación</p>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-1">
               {navLinks.map(({ to, label }) => (
                 <li key={to}>
@@ -63,7 +63,7 @@ function Footer() {
 
           {/* RRSS */}
           <div>
-            <p className="text-sm font-semibold text-white mb-3">Sigueme</p>
+            <p className="text-sm font-semibold text-white mb-3">Sígueme</p>
             <div className="flex gap-4">
               <a
                 href="https://www.linkedin.com/in/wnoack/"
@@ -91,7 +91,7 @@ function Footer() {
         </div>
 
         <div className="mt-6 pt-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', color: 'var(--text-secondary-dark)' }}>
-          <p>© {new Date().getFullYear()} mellamowalter.cl — Todos los derechos reservados</p>
+          <p>© {new Date().getFullYear()} mellamowalter.cl. Todos los derechos reservados.</p>
           <Link to="/admin" className="hover:text-white transition-colors">Admin</Link>
         </div>
       </div>

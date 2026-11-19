@@ -1,7 +1,26 @@
 import { Link } from 'react-router-dom';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
 
-const PRODUCTOS = [
+const CASOS = [
+  {
+    etiqueta: 'Automatización de residuos',
+    contexto: 'Empresa de servicios en Chile.',
+    problema: 'La contabilización y clasificación mensual de residuos se hacía en planillas de miles de filas y tomaba días o semanas.',
+    solucion: 'Una plataforma propia que consolida los datos automáticamente.',
+    cifra: '-95%',
+    apoyo: 'en tiempo de proceso: de días a minutos.',
+  },
+  {
+    etiqueta: 'Cotizador centralizado',
+    contexto: 'Empresa de venta de insumos industriales.',
+    problema: 'La información de cotizaciones estaba repartida en muchos archivos Excel sin formato.',
+    solucion: 'Un cotizador a medida que centraliza todo en un solo lugar.',
+    cifra: '1 plataforma',
+    apoyo: 'información ordenada, visible y con seguimiento.',
+  },
+];
+
+const PRODUCTOS_PRINCIPALES = [
   {
     nombre: 'AmbientApp',
     url: 'https://ambientapp.cl',
@@ -26,12 +45,24 @@ const PRODUCTOS = [
     logo: '/assets/logos/eriaSN.png',
     descripcion: 'Asistente de IA que interpreta la normativa ambiental chilena.',
   },
+];
+
+const PRODUCTOS_SECUNDARIOS = [
   {
     nombre: 'Voxterra',
     url: null,
     logo: '/assets/logos/voxterraSN.png',
     descripcion: 'SaaS agrícola y ganadero. Cuaderno de campo por voz: el operario habla desde el campo, el sistema transcribe, extrae datos estructurados y los registra automáticamente.',
     etiqueta: 'Prototipo',
+    etiquetaEstilo: { background: 'var(--icon-bg-blue)', color: 'var(--brand)' },
+  },
+  {
+    nombre: 'Wantü',
+    url: null,
+    logo: '/assets/logos/logoWantuSF.png',
+    descripcion: 'Kit de sensorización agrícola para pequeños agricultores: estación meteorológica, sensores de humedad y caudalímetro, con visualización en app móvil.',
+    etiqueta: 'TRL 7 · Finalizado',
+    etiquetaEstilo: { background: 'var(--paper)', color: 'var(--text-secondary)' },
   },
 ];
 
@@ -56,73 +87,114 @@ function Portafolio() {
         </div>
       </section>
 
+      {/* Casos destacados */}
+      <section className="py-20 bg-white">
+        <div className="container-site">
+          <h2 className="font-bold mb-10" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
+            Casos destacados
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {CASOS.map(({ etiqueta, contexto, problema, solucion, cifra, apoyo }) => (
+              <div
+                key={etiqueta}
+                className="flex flex-col rounded-lg overflow-hidden"
+                style={{ border: '1px solid var(--border)' }}
+              >
+                {/* Contenido */}
+                <div className="flex-1 p-7">
+                  <span
+                    className="inline-block text-xs font-semibold px-3 py-1 rounded-full mb-5"
+                    style={{ background: 'var(--icon-bg-blue)', color: 'var(--brand)', fontSize: '13px' }}
+                  >
+                    {etiqueta}
+                  </span>
+                  <div className="space-y-4">
+                    <div>
+                      <p className="font-bold mb-1" style={{ fontSize: '14px', color: 'var(--brand)' }}>Contexto</p>
+                      <p style={{ fontSize: '16px', color: 'var(--text-primary)' }}>{contexto}</p>
+                    </div>
+                    <div>
+                      <p className="font-bold mb-1" style={{ fontSize: '14px', color: 'var(--brand)' }}>Problema</p>
+                      <p style={{ fontSize: '16px', color: 'var(--text-primary)' }}>{problema}</p>
+                    </div>
+                    <div>
+                      <p className="font-bold mb-1" style={{ fontSize: '14px', color: 'var(--brand)' }}>Solución</p>
+                      <p style={{ fontSize: '16px', color: 'var(--text-primary)' }}>{solucion}</p>
+                    </div>
+                  </div>
+                </div>
+                {/* Franja resultado */}
+                <div className="px-7 py-5" style={{ background: 'var(--gradient-brand)' }}>
+                  <p className="text-xs font-semibold text-white opacity-70 mb-1">Resultado</p>
+                  <p className="font-bold text-white mb-1" style={{ fontSize: '28px' }}>{cifra}</p>
+                  <p className="text-sm text-white opacity-80">{apoyo}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Productos propios */}
-      <section className="py-16 bg-white">
+      <section className="py-16" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Productos propios</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Software desarrollado y mantenido de forma independiente.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {PRODUCTOS.map((p) => {
+
+          {/* Fila de 4 */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
+            {PRODUCTOS_PRINCIPALES.map((p) => (
+              <a
+                key={p.nombre}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-base card-hover group"
+                style={{ borderTop: '4px solid var(--forest)' }}
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <img src={p.logo} alt={p.nombre} className="h-10 w-auto object-contain shrink-0" />
+                    <span className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>{p.nombre}</span>
+                  </div>
+                  <ArrowTopRightOnSquareIcon className="w-4 h-4 shrink-0" style={{ color: 'var(--text-secondary)' }} />
+                </div>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{p.descripcion}</p>
+              </a>
+            ))}
+          </div>
+
+          {/* Fila de 2: Voxterra + Wantü */}
+          <div className="grid md:grid-cols-2 gap-5">
+            {PRODUCTOS_SECUNDARIOS.map((p) => {
               const Tag = p.url ? 'a' : 'div';
               const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
               return (
                 <Tag
                   key={p.nombre}
                   {...linkProps}
-                  className="card-base card-hover group"
-                  style={{ borderTop: '4px solid var(--forest)' }}
+                  className="card-base card-hover"
+                  style={{ borderTop: '4px solid var(--text-secondary)' }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      {p.logo && (
-                        <img src={p.logo} alt={p.nombre} className="h-10 w-auto object-contain shrink-0" />
-                      )}
-                      <span className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>
-                        {p.nombre}
-                      </span>
+                      <img src={p.logo} alt={p.nombre} className="h-10 w-auto object-contain shrink-0" />
+                      <span className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>{p.nombre}</span>
                     </div>
-                    <div className="flex items-center gap-1 shrink-0 ml-2">
-                      {p.etiqueta && (
-                        <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ background: 'var(--icon-bg-green)', color: 'var(--forest)' }}>
-                          {p.etiqueta}
-                        </span>
-                      )}
-                      {p.url && !p.etiqueta && (
-                        <ArrowTopRightOnSquareIcon className="w-4 h-4 transition" style={{ color: 'var(--text-secondary)' }} />
-                      )}
-                    </div>
+                    <span className="text-xs px-2 py-0.5 rounded font-medium" style={p.etiquetaEstilo}>
+                      {p.etiqueta}
+                    </span>
                   </div>
                   <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{p.descripcion}</p>
                 </Tag>
               );
             })}
           </div>
-
-          {/* Proyecto anterior */}
-          <div className="mt-10">
-            <p className="text-xs font-semibold uppercase tracking-wide mb-4" style={{ color: 'var(--text-secondary)' }}>
-              Proyecto anterior
-            </p>
-            <div className="card-base max-w-md" style={{ borderTop: '4px solid var(--text-secondary)' }}>
-              <div className="flex items-center justify-between mb-3">
-                <div className="flex items-center gap-3">
-                  <img src="/assets/logos/logoWantuSF.png" alt="Wantü" className="h-10 w-auto object-contain" />
-                  <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Wantü</span>
-                </div>
-                <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--paper)', color: 'var(--text-secondary)' }}>
-                  TRL 7 · Finalizado
-                </span>
-              </div>
-              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                Kit de sensorización agrícola para pequeños agricultores: estación meteorológica, sensores de humedad y caudalímetro, con visualización en app móvil.
-              </p>
-            </div>
-          </div>
         </div>
       </section>
 
       {/* Sitios web */}
-      <section className="py-16" style={{ background: 'var(--paper)' }}>
+      <section className="py-16 bg-white">
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Sitios web desarrollados</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Proyectos desarrollados para clientes.</p>
@@ -144,9 +216,7 @@ function Portafolio() {
                   />
                 </div>
                 <div className="p-4 flex items-center justify-between">
-                  <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
-                    {s.nombre}
-                  </span>
+                  <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>{s.nombre}</span>
                   <ArrowTopRightOnSquareIcon className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
                 </div>
               </a>
@@ -160,7 +230,7 @@ function Portafolio() {
         <div className="container-site text-center">
           <h2 className="text-3xl font-bold text-white mb-3">¿Tienes un proyecto en mente?</h2>
           <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Cuéntame qué necesitas y vemos cómo abordarlo.</p>
-          <Link to="/contacto" className="btn-dark-secondary">Conversemos</Link>
+          <Link to="/contacto" className="btn-dark-primary">Conversemos</Link>
         </div>
       </section>
 

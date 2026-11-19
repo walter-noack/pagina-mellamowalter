@@ -1,35 +1,59 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+
+const links = [
+  { to: '/',           label: 'Inicio' },
+  { to: '/sobre-mi',   label: 'Sobre Mi' },
+  { to: '/servicios',  label: 'Servicios' },
+  { to: '/portafolio', label: 'Portafolio' },
+  { to: '/talleres',   label: 'Talleres' },
+];
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
+  const close = () => setIsOpen(false);
+  const { pathname } = useLocation();
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav style={{ background: 'var(--night)' }} className="sticky top-0 z-50">
+      <div className="container-site">
+        <div className="flex justify-between items-center" style={{ height: '72px' }}>
 
           {/* Logo */}
-          <Link to="/" onClick={closeMenu}>
-            <img src="/logoWnew.png" alt="mellamowalter.cl" className="h-10 w-auto" />
+          <Link to="/" onClick={close}>
+            <img src="/logoBlanco.png" alt="mellamowalter.cl" className="h-10 w-auto" />
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 transition">Inicio</Link>
-            <Link to="/sobre-mi" className="text-gray-700 hover:text-blue-600 transition">Sobre Mí</Link>
-            <Link to="/servicios" className="text-gray-700 hover:text-blue-600 transition">Servicios</Link>
-            <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition">Blog</Link>
-            <Link to="/contacto" className="text-gray-700 hover:text-blue-600 transition">Contacto</Link>
+          <div className="hidden md:flex items-center gap-8">
+            {links.map(({ to, label }) => {
+              const active = pathname === to || (to !== '/' && pathname.startsWith(to));
+              return (
+                <Link
+                  key={to}
+                  to={to}
+                  className="text-sm font-medium transition-colors hover:text-white"
+                  style={{
+                    color: active ? '#fff' : 'var(--text-light)',
+                    borderBottom: active ? '2px solid var(--brand)' : '2px solid transparent',
+                    paddingBottom: '2px',
+                  }}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+            <Link to="/contacto" className="btn-dark-primary text-sm ml-2">
+              Conversemos
+            </Link>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile hamburger */}
           <button
-            onClick={toggleMenu}
-            className="md:hidden text-gray-700 hover:text-blue-600 focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden focus:outline-none"
+            aria-label="Abrir menu"
+            style={{ color: 'var(--text-light)' }}
           >
             <svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
               {isOpen
@@ -38,20 +62,31 @@ function Navbar() {
               }
             </svg>
           </button>
-
         </div>
 
         {/* Mobile menu */}
         {isOpen && (
-          <div className="md:hidden pb-4">
-            <Link to="/" onClick={closeMenu} className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition px-4">Inicio</Link>
-            <Link to="/sobre-mi" onClick={closeMenu} className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition px-4">Sobre Mí</Link>
-            <Link to="/servicios" onClick={closeMenu} className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition px-4">Servicios</Link>
-            <Link to="/blog" onClick={closeMenu} className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition px-4">Blog</Link>
-            <Link to="/contacto" onClick={closeMenu} className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition px-4">Contacto</Link>
+          <div className="md:hidden pb-4 border-t" style={{ borderColor: 'rgba(255,255,255,0.08)' }}>
+            {links.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                onClick={close}
+                className="block py-3 px-2 text-sm font-medium transition-colors hover:text-white"
+                style={{ color: 'var(--text-light)' }}
+              >
+                {label}
+              </Link>
+            ))}
+            <Link
+              to="/contacto"
+              onClick={close}
+              className="btn-dark-primary text-sm mt-3 block text-center"
+            >
+              Conversemos
+            </Link>
           </div>
         )}
-
       </div>
     </nav>
   );

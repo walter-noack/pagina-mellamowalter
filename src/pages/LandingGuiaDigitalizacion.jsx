@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FileSpreadsheet, Kanban, BarChart2, BookOpen } from 'lucide-react';
+import { TableCellsIcon, ViewColumnsIcon, ChartBarIcon, BookOpenIcon } from '@heroicons/react/24/outline';
 
 /*
   INSTRUCCIONES CPANEL — Guía Digitalización
@@ -11,19 +11,19 @@ import { FileSpreadsheet, Kanban, BarChart2, BookOpen } from 'lucide-react';
 
 const procesos = [
   {
-    Icon: FileSpreadsheet,
+    Icon: TableCellsIcon,
     proceso: 'Registro de residuos',
     herramienta: 'Google Forms',
     desc: 'Captura cada movimiento en terreno sin planillas manuales.',
   },
   {
-    Icon: Kanban,
+    Icon: ViewColumnsIcon,
     proceso: 'Seguimiento de obligaciones',
     herramienta: 'Trello',
     desc: 'Visualiza el estado de cada obligación regulatoria en un tablero simple.',
   },
   {
-    Icon: BarChart2,
+    Icon: ChartBarIcon,
     proceso: 'Reportes',
     herramienta: 'Google Sheets',
     desc: 'Consolida datos y genera reportes automáticos para la autoridad.',
@@ -57,7 +57,7 @@ export default function LandingGuiaDigitalizacion() {
           {/* Preview PDF */}
           <div className="flex justify-center mb-12">
             <div className="w-52 h-72 bg-gray-100 border border-gray-200 rounded-xl flex flex-col items-center justify-center gap-3 text-gray-400 text-sm">
-              <BookOpen size={40} className="text-gray-300" />
+              <BookOpenIcon className="w-10 h-10 text-gray-300" />
               <span className="text-center px-4 leading-snug">
                 Portada del PDF<br />
                 <span className="text-xs text-gray-300">(guia-digitalizacion-preview.png)</span>

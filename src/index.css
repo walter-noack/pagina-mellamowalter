@@ -79,6 +79,20 @@ body {
 }
 .btn-secondary:hover { background: var(--icon-bg-blue); }
 
+/* Sobre fondo claro, apariencia oscura */
+.btn-night {
+  display: inline-block;
+  background: var(--night);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+.btn-night:hover { opacity: 0.85; }
+
 /* Sobre fondo oscuro */
 .btn-dark-primary {
   display: inline-block;

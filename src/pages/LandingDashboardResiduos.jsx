@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { BarChart2, Zap, Search, Wrench } from 'lucide-react';
+import { ChartBarIcon, BoltIcon, MagnifyingGlassIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
 
 const SERVICE_ID = 'service_d0lqygt';
 const TEMPLATE_ID = 'template_26nhu11';
@@ -8,22 +8,22 @@ const PUBLIC_KEY = '1D72Vd7GTrIORkyjg';
 
 const bullets = [
   {
-    Icon: BarChart2,
+    Icon: ChartBarIcon,
     title: 'Visualización en tiempo real',
     desc: 'Todos los datos de residuos en un solo lugar — sin hojas de cálculo dispersas ni reportes manuales.',
   },
   {
-    Icon: Zap,
+    Icon: BoltIcon,
     title: 'Automatización de reportes',
     desc: 'El sistema genera los informes solo. Tú revisas, no construyes.',
   },
   {
-    Icon: Search,
+    Icon: MagnifyingGlassIcon,
     title: 'Trazabilidad completa',
     desc: 'Cada movimiento queda registrado: quién, cuándo y cuánto. Ideal para auditorías y certificaciones.',
   },
   {
-    Icon: Wrench,
+    Icon: WrenchScrewdriverIcon,
     title: 'Hecho a la medida de tu operación',
     desc: 'No es un software genérico. Se construye según los flujos reales de tu empresa.',
   },
@@ -106,7 +106,7 @@ export default function LandingDashboardResiduos() {
                 key={title}
                 className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm flex gap-4 items-start"
               >
-                <Icon className="text-[#1E4ED8] mt-0.5 shrink-0" size={24} />
+                <Icon className="w-6 h-6 text-[#1E4ED8] mt-0.5 shrink-0" />
                 <div>
                   <h3 className="font-semibold text-[#111827] mb-1">{title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>

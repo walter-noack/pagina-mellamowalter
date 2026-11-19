@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BarChart2, FileText, Briefcase, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { ChartBarIcon, DocumentTextIcon, BriefcaseIcon, ShieldCheckIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
 
 /*
   INSTRUCCIONES CPANEL — Prompts IA
@@ -10,10 +10,10 @@ import { BarChart2, FileText, Briefcase, ShieldCheck, AlertTriangle } from 'luci
 */
 
 const categorias = [
-  { Icon: BarChart2,   label: 'Análisis de datos',         cantidad: 5 },
-  { Icon: FileText,    label: 'Redacción de reportes',      cantidad: 5 },
-  { Icon: Briefcase,   label: 'Estructurar propuestas',     cantidad: 5 },
-  { Icon: ShieldCheck, label: 'Cumplimiento regulatorio',   cantidad: 5 },
+  { Icon: ChartBarIcon,    label: 'Análisis de datos',         cantidad: 5 },
+  { Icon: DocumentTextIcon, label: 'Redacción de reportes',   cantidad: 5 },
+  { Icon: BriefcaseIcon,   label: 'Estructurar propuestas',   cantidad: 5 },
+  { Icon: ShieldCheckIcon, label: 'Cumplimiento regulatorio', cantidad: 5 },
 ];
 
 export default function LandingPromptsIA() {
@@ -61,7 +61,7 @@ export default function LandingPromptsIA() {
           <div className="grid sm:grid-cols-2 gap-5 mb-10">
             {categorias.map(({ Icon, label, cantidad }) => (
               <div key={label} className="flex items-center gap-4 bg-gray-50 border border-gray-100 rounded-xl p-5">
-                <Icon size={22} className="text-[#1E4ED8] shrink-0" />
+                <Icon className="w-[22px] h-[22px] text-[#1E4ED8] shrink-0" />
                 <div className="flex-1">
                   <p className="font-semibold text-[#111827]">{label}</p>
                 </div>
@@ -72,7 +72,7 @@ export default function LandingPromptsIA() {
 
           {/* Aviso destacado */}
           <div className="flex gap-3 items-start bg-red-50 border border-red-200 rounded-xl p-5 mb-12">
-            <AlertTriangle size={20} className="text-red-500 mt-0.5 shrink-0" />
+            <ExclamationTriangleIcon className="w-5 h-5 text-red-500 mt-0.5 shrink-0" />
             <p className="text-red-700 text-sm leading-relaxed">
               <strong>La IA es un complemento, no un reemplazo.</strong> Todo lo que genera
               debe ser verificado por un profesional antes de usarse en documentos oficiales.

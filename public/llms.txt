@@ -8,16 +8,26 @@ Consultor en Digitalización e Innovación para PyMEs con más de 10 años de ex
 - Herramientas a medida: desarrollo de software específico para el problema
 - Huella de carbono y gestión ambiental: medición, reducción y gestión para empresas
 - Desarrollo web: sitios y aplicaciones en React
+- URL: https://www.mellamowalter.cl/servicios
 
 ## Diagnóstico inicial (punto de partida para PyMEs)
 - Sesión de 45 minutos + documento con causa raíz y propuesta de solución
-- Precio: 0,75 UF + IVA (~$30.000 CLP), descontable si se continúa con implementación
+- Precio: 0,75 UF + IVA, descontable si se continúa con implementación
 - URL: https://www.mellamowalter.cl/diagnostico
 
 ## Talleres de Innovación para Educación Técnica
 - Dirigidos a liceos técnico-profesionales: directivos, docentes y estudiantes
 - Contenidos: Design Thinking, prototipado, innovación en el aula, vinculación con el medio
 - URL: https://www.mellamowalter.cl/talleres
+
+## Portafolio de proyectos
+- AmbientApp: ecosistema de software de cumplimiento ambiental (Ley REP, huella de carbono, IA regulatoria)
+- Valorizapp: gestión de residuos y cumplimiento Ley REP
+- CarbonApp: cálculo de huella de carbono alineado al GHG Protocol
+- Eria: asistente de IA que interpreta normativa ambiental chilena
+- Wantü: kit de sensorización agrícola IoT para pequeños agricultores (TRL 7)
+- Desarrollo web para ensustenta.cl, neuambiente.cl, miamade.cl, micasafull.cl
+- URL: https://www.mellamowalter.cl/portafolio
 
 ## Contacto
 - Email: hola@wnoack.cl

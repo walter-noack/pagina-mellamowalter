@@ -36,99 +36,84 @@ const PRODUCTOS = [
 ];
 
 const SITIOS = [
-  {
-    nombre: 'ensustenta.cl',
-    url: 'https://ensustenta.cl',
-    img: '/assets/ensustenta.png',
-  },
-  {
-    nombre: 'neuambiente.cl',
-    url: 'https://neuambiente.cl',
-    img: '/assets/neuambiente.png',
-  },
-  {
-    nombre: 'miamade.cl',
-    url: 'https://miamade.cl',
-    img: '/assets/miamade.png',
-  },
-  {
-    nombre: 'micasafull.cl',
-    url: 'https://micasafull.cl',
-    img: '/assets/micasafull.png',
-  },
+  { nombre: 'ensustenta.cl',  url: 'https://ensustenta.cl',  img: '/assets/ensustenta.png' },
+  { nombre: 'neuambiente.cl', url: 'https://neuambiente.cl', img: '/assets/neuambiente.png' },
+  { nombre: 'miamade.cl',     url: 'https://miamade.cl',     img: '/assets/miamade.png' },
+  { nombre: 'micasafull.cl',  url: 'https://micasafull.cl',  img: '/assets/micasafull.png' },
 ];
 
 function Portafolio() {
   return (
-    <div className="bg-white">
+    <div>
 
       {/* Header */}
-      <section className="bg-gray-100 py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
-            Portafolio
-          </h1>
-          <p className="text-lg text-gray-600 max-w-2xl">
+      <section className="py-16" style={{ background: 'var(--gradient-night)' }}>
+        <div className="container-site">
+          <h1 className="text-4xl font-bold text-white mb-4">Portafolio</h1>
+          <p className="text-lg max-w-xl" style={{ color: 'var(--text-light)' }}>
             Productos propios y sitios web desarrollados.
           </p>
         </div>
       </section>
 
       {/* Productos propios */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Productos propios</h2>
-          <p className="text-gray-500 mb-8 text-sm">Software desarrollado y mantenido de forma independiente.</p>
+      <section className="py-16 bg-white">
+        <div className="container-site">
+          <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Productos propios</h2>
+          <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Software desarrollado y mantenido de forma independiente.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {PRODUCTOS.map((p) => {
               const Tag = p.url ? 'a' : 'div';
-              const linkProps = p.url
-                ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' }
-                : {};
+              const linkProps = p.url ? { href: p.url, target: '_blank', rel: 'noopener noreferrer' } : {};
               return (
                 <Tag
                   key={p.nombre}
                   {...linkProps}
-                  className="border border-gray-200 rounded-xl p-5 hover:shadow-md transition group"
+                  className="card-base card-hover group"
+                  style={{ borderTop: '4px solid var(--forest)' }}
                 >
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-3">
                       {p.logo && (
-                        <img src={p.logo} alt={p.nombre} className="h-12 w-auto object-contain flex-shrink-0" />
+                        <img src={p.logo} alt={p.nombre} className="h-10 w-auto object-contain shrink-0" />
                       )}
-                      <span className="font-semibold text-gray-900">
+                      <span className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>
                         {p.nombre}
                       </span>
                     </div>
-                    <div className="flex items-center gap-1 flex-shrink-0 ml-2">
+                    <div className="flex items-center gap-1 shrink-0 ml-2">
                       {p.etiqueta && (
-                        <span className="text-xs text-amber-600 bg-amber-50 px-2 py-0.5 rounded font-medium">
+                        <span className="text-xs px-2 py-0.5 rounded font-medium" style={{ background: 'var(--icon-bg-green)', color: 'var(--forest)' }}>
                           {p.etiqueta}
                         </span>
                       )}
                       {p.url && !p.etiqueta && (
-                        <ArrowTopRightOnSquareIcon className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" />
+                        <ArrowTopRightOnSquareIcon className="w-4 h-4 transition" style={{ color: 'var(--text-secondary)' }} />
                       )}
                     </div>
                   </div>
-                  <p className="text-sm text-gray-600">{p.descripcion}</p>
+                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{p.descripcion}</p>
                 </Tag>
               );
             })}
           </div>
 
           {/* Proyecto anterior */}
-          <div className="mt-8">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Proyecto anterior</h3>
-            <div className="border border-gray-200 rounded-xl p-5 max-w-md">
-              <div className="flex items-center justify-between mb-2">
+          <div className="mt-10">
+            <p className="text-xs font-semibold uppercase tracking-wide mb-4" style={{ color: 'var(--text-secondary)' }}>
+              Proyecto anterior
+            </p>
+            <div className="card-base max-w-md" style={{ borderTop: '4px solid var(--text-secondary)' }}>
+              <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-3">
-                  <img src="/assets/logos/logoWantuSF.png" alt="Wantü" className="h-12 w-auto object-contain" />
-                  <span className="font-semibold text-gray-900">Wantü</span>
+                  <img src="/assets/logos/logoWantuSF.png" alt="Wantü" className="h-10 w-auto object-contain" />
+                  <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>Wantü</span>
                 </div>
-                <span className="text-xs text-gray-400 bg-gray-100 px-2 py-1 rounded">TRL 7 · Finalizado</span>
+                <span className="text-xs px-2 py-1 rounded" style={{ background: 'var(--paper)', color: 'var(--text-secondary)' }}>
+                  TRL 7 · Finalizado
+                </span>
               </div>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
                 Kit de sensorización agrícola para pequeños agricultores: estación meteorológica, sensores de humedad y caudalímetro, con visualización en app móvil.
               </p>
             </div>
@@ -136,11 +121,11 @@ function Portafolio() {
         </div>
       </section>
 
-      {/* Sitios web desarrollados */}
-      <section className="bg-gray-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-2">Sitios web desarrollados</h2>
-          <p className="text-gray-500 mb-8 text-sm">Proyectos desarrollados para clientes.</p>
+      {/* Sitios web */}
+      <section className="py-16" style={{ background: 'var(--paper)' }}>
+        <div className="container-site">
+          <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Sitios web desarrollados</h2>
+          <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Proyectos desarrollados para clientes.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {SITIOS.map((s) => (
               <a
@@ -148,9 +133,9 @@ function Portafolio() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-gray-200 rounded-xl overflow-hidden hover:shadow-md transition group bg-white"
+                className="card-base card-hover group overflow-hidden p-0"
               >
-                <div className="h-36 bg-gray-100 overflow-hidden">
+                <div className="h-36 overflow-hidden" style={{ background: 'var(--night-2)' }}>
                   <img
                     src={s.img}
                     alt={s.nombre}
@@ -159,10 +144,10 @@ function Portafolio() {
                   />
                 </div>
                 <div className="p-4 flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-700 group-hover:text-blue-600 transition">
+                  <span className="text-sm font-medium" style={{ color: 'var(--text-primary)' }}>
                     {s.nombre}
                   </span>
-                  <ArrowTopRightOnSquareIcon className="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" />
+                  <ArrowTopRightOnSquareIcon className="w-4 h-4" style={{ color: 'var(--text-secondary)' }} />
                 </div>
               </a>
             ))}
@@ -170,19 +155,12 @@ function Portafolio() {
         </div>
       </section>
 
-      {/* CTA final */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white p-10 rounded-xl">
-            <h2 className="text-2xl font-bold mb-3">¿Tienes un proyecto en mente?</h2>
-            <p className="text-blue-100 mb-6">Cuéntame qué necesitas y vemos cómo abordarlo.</p>
-            <Link
-              to="/contacto"
-              className="inline-block bg-white text-blue-700 font-semibold px-8 py-3 rounded-lg hover:bg-gray-100 transition"
-            >
-              Conversemos
-            </Link>
-          </div>
+      {/* CTA */}
+      <section className="py-20" style={{ background: 'var(--gradient-brand)' }}>
+        <div className="container-site text-center">
+          <h2 className="text-3xl font-bold text-white mb-3">¿Tienes un proyecto en mente?</h2>
+          <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Cuéntame qué necesitas y vemos cómo abordarlo.</p>
+          <Link to="/contacto" className="btn-dark-secondary">Conversemos</Link>
         </div>
       </section>
 

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ClipboardList, Recycle, Wind, Search } from 'lucide-react';
+import { ClipboardDocumentListIcon, ArrowPathIcon, CloudIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 /*
   INSTRUCCIONES CPANEL — Checklist
@@ -10,10 +10,10 @@ import { ClipboardList, Recycle, Wind, Search } from 'lucide-react';
 */
 
 const bloques = [
-  { Icon: ClipboardList, label: 'Ley REP', desc: 'Obligaciones de productores y comercializadores bajo la Ley 20.920.' },
-  { Icon: Recycle,       label: 'Gestión de Residuos', desc: 'Registro, trazabilidad y disposición final de residuos industriales.' },
-  { Icon: Wind,          label: 'Emisiones', desc: 'Declaración y seguimiento de emisiones atmosféricas.' },
-  { Icon: Search,        label: 'Trazabilidad', desc: 'Documentación y cadena de custodia para auditorías y fiscalización.' },
+  { Icon: ClipboardDocumentListIcon, label: 'Ley REP', desc: 'Obligaciones de productores y comercializadores bajo la Ley 20.920.' },
+  { Icon: ArrowPathIcon,             label: 'Gestión de Residuos', desc: 'Registro, trazabilidad y disposición final de residuos industriales.' },
+  { Icon: CloudIcon,                 label: 'Emisiones', desc: 'Declaración y seguimiento de emisiones atmosféricas.' },
+  { Icon: MagnifyingGlassIcon,       label: 'Trazabilidad', desc: 'Documentación y cadena de custodia para auditorías y fiscalización.' },
 ];
 
 export default function LandingChecklist() {
@@ -61,7 +61,7 @@ export default function LandingChecklist() {
           <div className="grid sm:grid-cols-2 gap-5 mb-12">
             {bloques.map(({ Icon, label, desc }) => (
               <div key={label} className="flex gap-4 items-start bg-gray-50 border border-gray-100 rounded-xl p-5">
-                <Icon size={22} className="text-[#1E4ED8] mt-0.5 shrink-0" />
+                <Icon className="w-[22px] h-[22px] text-[#1E4ED8] mt-0.5 shrink-0" />
                 <div>
                   <p className="font-semibold text-[#111827] mb-1">{label}</p>
                   <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>

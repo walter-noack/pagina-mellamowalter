@@ -1,3 +1,144 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── Variables globales ── */
+:root {
+  --brand:          #1B4FC4;
+  --brand-deep:     #1741A6;
+  --night:          #0E1B3D;
+  --night-2:        #16295C;
+  --paper:          #F6F8FC;
+  --white:          #FFFFFF;
+  --forest:         #2F6B4F;
+  --forest-light:   #8FD3B0;
+  --blue-light:     #9DB8FF;
+  --text-light:     #C9D3EA;
+  --text-secondary-dark: #9FB0D8;
+  --text-primary:   #2B3550;
+  --text-secondary: #5B6785;
+  --border:         #E1E7F3;
+  --icon-bg-blue:   #E8EEFC;
+  --icon-bg-green:  #E4F0EA;
+
+  --gradient-night: linear-gradient(135deg, #0E1B3D 0%, #16295C 100%);
+  --gradient-brand: linear-gradient(135deg, #1B4FC4 0%, #1741A6 100%);
+
+  --radius:    8px;
+  --max-width: 1200px;
+  --padding-x: 40px;
+}
+
+/* ── Base ── */
+body {
+  font-family: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  color: var(--text-primary);
+  background: var(--white);
+}
+
+/* ── Contenedor ── */
+.container-site {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+
+@media (max-width: 640px) {
+  .container-site {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ── Botones ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: background 0.15s;
+  text-align: center;
+}
+.btn-primary:hover { background: var(--brand-deep); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--brand);
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  border: 2px solid var(--brand);
+  transition: background 0.15s;
+  text-align: center;
+}
+.btn-secondary:hover { background: var(--icon-bg-blue); }
+
+/* Sobre fondo oscuro */
+.btn-dark-primary {
+  display: inline-block;
+  background: #fff;
+  color: var(--night);
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  transition: opacity 0.15s;
+  text-align: center;
+}
+.btn-dark-primary:hover { opacity: 0.9; }
+
+.btn-dark-secondary {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  border: 2px solid #fff;
+  transition: background 0.15s;
+  text-align: center;
+}
+.btn-dark-secondary:hover { background: rgba(255,255,255,0.1); }
+
+/* ── Tarjeta base ── */
+.card-base {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+.card-base-blue  { border-top: 4px solid var(--brand); }
+.card-base-green { border-top: 4px solid var(--forest); }
+.card-base-night { border-top: 4px solid var(--night); }
+
+/* ── Hover de tarjetas ── */
+.card-hover {
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+}
+.card-hover:hover {
+  box-shadow: 0 4px 16px rgba(27, 79, 196, 0.10);
+  border-color: var(--brand);
+  transform: translateY(-2px);
+}
+
+/* ── Links de texto ── */
+a.link-text:hover { text-decoration: underline; }
+
+/* ── Accesibilidad ── */
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

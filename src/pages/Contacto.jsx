@@ -70,7 +70,7 @@ function Contacto() {
         </section>
 
         {/* Contacto y formulario */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white fade">
           <div className="container-site">
             <div className="grid gap-16 items-start" style={{ gridTemplateColumns: '1fr 1.2fr' }}>
 
@@ -189,7 +189,7 @@ function Contacto() {
         </section>
 
         {/* Línea diagnóstico */}
-        <section className="text-center" style={{ background: 'var(--paper)', padding: '40px' }}>
+        <section className="text-center fade" style={{ background: 'var(--paper)', padding: '40px' }}>
           <p style={{ fontSize: '17px', color: 'var(--text-primary)' }}>
             Si tienes una PyME y quieres partir con algo concreto, mira el{' '}
             <Link to="/diagnostico" className="font-medium hover:underline" style={{ color: 'var(--brand)' }}>

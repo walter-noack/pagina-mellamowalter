@@ -139,7 +139,7 @@ function Servicios() {
         </section>
 
         {/* Servicios */}
-        <section className="py-[72px]" style={{ background: 'var(--paper)' }}>
+        <section className="py-[72px] fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-6">
               {servicios.map(({ Icon, titulo, problema, entregable, variante }) => (
@@ -167,7 +167,7 @@ function Servicios() {
         </section>
 
         {/* Cómo trabajo */}
-        <section className="py-[72px] bg-white">
+        <section className="py-[72px] bg-white fade">
           <div className="container-site">
             <h2 className="font-bold mb-3" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo trabajo
@@ -192,7 +192,7 @@ function Servicios() {
         </section>
 
         {/* Cómo se define el valor + diagnóstico */}
-        <section className="py-[72px]" style={{ background: 'var(--paper)' }}>
+        <section className="py-[72px] fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-4" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo se define el valor
@@ -224,7 +224,7 @@ function Servicios() {
         </section>
 
         {/* Preguntas frecuentes */}
-        <section className="py-[72px] bg-white">
+        <section className="py-[72px] bg-white fade">
           <div className="container-site">
             <h2 className="font-bold mb-10" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Preguntas frecuentes
@@ -243,7 +243,7 @@ function Servicios() {
         </section>
 
         {/* CTA */}
-        <section className="py-20" style={{ background: 'var(--gradient-brand)' }}>
+        <section className="py-20 fade" style={{ background: 'var(--gradient-brand)' }}>
           <div className="container-site text-center">
             <h2 className="font-bold text-white mb-3" style={{ fontSize: '32px' }}>
               ¿Tienes un proyecto en mente?

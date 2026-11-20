@@ -88,7 +88,7 @@ function Portafolio() {
       </section>
 
       {/* Casos destacados */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white fade">
         <div className="container-site">
           <h2 className="font-bold mb-10" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
             Casos destacados
@@ -136,7 +136,7 @@ function Portafolio() {
       </section>
 
       {/* Productos propios */}
-      <section className="py-16" style={{ background: 'var(--paper)' }}>
+      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Productos propios</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Software desarrollado y mantenido de forma independiente.</p>
@@ -194,7 +194,7 @@ function Portafolio() {
       </section>
 
       {/* Sitios web */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white fade">
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Sitios web desarrollados</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Proyectos desarrollados para clientes.</p>
@@ -226,7 +226,7 @@ function Portafolio() {
       </section>
 
       {/* CTA */}
-      <section className="py-20" style={{ background: 'var(--gradient-brand)' }}>
+      <section className="py-20 fade" style={{ background: 'var(--gradient-brand)' }}>
         <div className="container-site text-center">
           <h2 className="text-3xl font-bold text-white mb-3">¿Tienes un proyecto en mente?</h2>
           <p className="mb-8" style={{ color: 'rgba(255,255,255,0.8)' }}>Cuéntame qué necesitas y vemos cómo abordarlo.</p>

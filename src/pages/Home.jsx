@@ -123,7 +123,7 @@ function Home() {
       </section>
 
       {/* 2 — En qué puedo ayudarte */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white fade">
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-10" style={{ color: 'var(--text-primary)' }}>
             ¿En qué puedo ayudarte?
@@ -143,7 +143,7 @@ function Home() {
       </section>
 
       {/* 3 — Casos reales */}
-      <section className="py-16" style={{ background: 'var(--paper)' }}>
+      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>Casos reales</h2>
@@ -182,7 +182,7 @@ function Home() {
       </section>
 
       {/* 4 — Banda foto */}
-      <section className="min-h-64 flex flex-col md:flex-row">
+      <section className="min-h-64 flex flex-col md:flex-row fade">
         {/* Texto */}
         <div className="md:w-1/2 flex items-center py-16 px-10" style={{ background: 'var(--gradient-night)' }}>
           <div>
@@ -204,7 +204,7 @@ function Home() {
       </section>
 
       {/* 5 — Trayectoria */}
-      <section className="py-16" style={{ background: 'var(--night)' }}>
+      <section className="py-16 fade" style={{ background: 'var(--night)' }}>
         <div className="container-site">
           <div className="flex flex-col md:flex-row gap-12">
             {/* Columna izq */}
@@ -230,7 +230,7 @@ function Home() {
       </section>
 
       {/* 6 — Otras formas de trabajar juntos */}
-      <section className="py-16" style={{ background: 'var(--paper)' }}>
+      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-10" style={{ color: 'var(--text-primary)' }}>
             Otras formas de trabajar juntos
@@ -261,7 +261,7 @@ function Home() {
       </section>
 
       {/* 7 — CTA final */}
-      <section className="py-20" style={{ background: 'var(--gradient-brand)' }}>
+      <section className="py-20 fade" style={{ background: 'var(--gradient-brand)' }}>
         <div className="container-site text-center">
           <h2 className="text-3xl font-bold text-white mb-3">
             ¿Tienes un proyecto en mente?

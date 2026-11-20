@@ -6,6 +6,26 @@ function ScrollToTop() {
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
   return null;
 }
+
+function ScrollFade() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const els = document.querySelectorAll('.fade:not(.visible)');
+      if (!els.length) return;
+      const obs = new IntersectionObserver(
+        (entries) => entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        }),
+        { threshold: 0.08, rootMargin: '0px 0px -32px 0px' }
+      );
+      els.forEach(el => obs.observe(el));
+      return () => obs.disconnect();
+    }, 60);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+  return null;
+}
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -45,6 +65,7 @@ function App() {
     <Router>
       <GATracker />
       <ScrollToTop />
+      <ScrollFade />
       <AdminAuthProvider>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />

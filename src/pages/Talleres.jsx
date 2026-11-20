@@ -124,7 +124,7 @@ function Talleres() {
         </section>
 
         {/* Talleres */}
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-white fade">
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-6">
               <TallerColumna
@@ -142,7 +142,7 @@ function Talleres() {
         </section>
 
         {/* Formatos */}
-        <section className="py-20" style={{ background: 'var(--paper)' }}>
+        <section className="py-20 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-10" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Formatos
@@ -166,7 +166,7 @@ function Talleres() {
         </section>
 
         {/* Respaldo */}
-        <section className="py-[72px]" style={{ background: 'var(--gradient-night)' }}>
+        <section className="py-[72px] fade" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -193,7 +193,7 @@ function Talleres() {
         </section>
 
         {/* CTA */}
-        <section className="py-20" style={{ background: 'var(--gradient-brand)' }}>
+        <section className="py-20 fade" style={{ background: 'var(--gradient-brand)' }}>
           <div className="container-site text-center">
             <h2 className="font-bold text-white mb-3" style={{ fontSize: '32px' }}>
               ¿Te interesa hacer un taller en tu institución?

@@ -150,7 +150,26 @@ a.link-text:hover { text-decoration: underline; }
   outline-offset: 2px;
 }
 
+/* ── Animaciones de entrada ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade.visible {
+  animation: fadeInUp 0.55s ease-out forwards;
+}
+.fade-d1.visible { animation-delay: 0.08s; }
+.fade-d2.visible { animation-delay: 0.16s; }
+.fade-d3.visible { animation-delay: 0.24s; }
+
 @media (prefers-reduced-motion: reduce) {
+  .fade { opacity: 1 !important; transform: none !important; }
+  .fade.visible { animation: none !important; }
   *, *::before, *::after {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;

@@ -36,7 +36,7 @@ function Contacto() {
     e.preventDefault();
     setEnviando(true);
     setMensajeError(false);
-    emailjs.send('service_d0lqygt', 'template_26nhu11', formData, '1D72Vd7GTrIORkyjg')
+    emailjs.send('service_d0lqygt', 'template_26nhu11', { ...formData, tipo_proyecto: 'Consulta general' }, '1D72Vd7GTrIORkyjg')
       .then(() => {
         setEnviando(false);
         setMensajeExito(true);

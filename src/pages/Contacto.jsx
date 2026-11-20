@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import emailjs from '@emailjs/browser';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 function LinkedInIcon() {
@@ -36,12 +35,22 @@ function Contacto() {
     e.preventDefault();
     setEnviando(true);
     setMensajeError(false);
-    emailjs.send('service_d0lqygt', 'template_26nhu11', { ...formData, tipoProyecto: 'Consulta general' }, '1D72Vd7GTrIORkyjg')
-      .then(() => {
+    fetch('/contact.php', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    })
+      .then(r => r.json())
+      .then(data => {
         setEnviando(false);
-        setMensajeExito(true);
-        setFormData({ nombre: '', email: '', mensaje: '' });
-        setTimeout(() => setMensajeExito(false), 5000);
+        if (data.ok) {
+          setMensajeExito(true);
+          setFormData({ nombre: '', email: '', mensaje: '' });
+          setTimeout(() => setMensajeExito(false), 5000);
+        } else {
+          setMensajeError(true);
+          setTimeout(() => setMensajeError(false), 5000);
+        }
       })
       .catch(() => {
         setEnviando(false);

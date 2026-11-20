@@ -14,7 +14,7 @@ const TALLERES_ESTUDIANTES = [
   {
     Icon: LightBulbIcon,
     titulo: 'Design Thinking aplicado',
-    descripcion: 'Metodología de innovación centrada en las personas, aplicada a problemas reales del entorno del estudiante.',
+    descripcion: 'Metodología de innovación centrada en las personas, aplicada a problemas reales del entorno del estudiante y/o en su área de formación.',
   },
   {
     Icon: PuzzlePieceIcon,
@@ -102,29 +102,23 @@ function Talleres() {
       <div>
 
         {/* Header con foto */}
-        <section
-          className="relative"
-          style={{ paddingTop: '72px', paddingBottom: '80px' }}
-        >
+        <section className="relative py-10">
           <div className="absolute inset-0" style={{ background: 'var(--gradient-night)' }} />
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="/images/estudiantes-feria-2025.jpg"
-              alt="Estudiantes explicando su proyecto en la Feria de Innovación TEC-UCT 2025"
+              src="/images/talleres-header.jpg"
+              alt="Taller de innovación con post-its y marcadores"
               className="w-full h-full object-cover"
               onError={(e) => { e.target.style.display = 'none'; }}
             />
             <div className="absolute inset-0" style={{ background: 'rgba(14,27,61,0.65)' }} />
           </div>
           <div className="container-site relative">
-            <h1
-              className="font-bold text-white mb-4"
-              style={{ fontSize: '40px', maxWidth: '760px', lineHeight: 1.2 }}
-            >
+            <h1 className="text-4xl font-bold text-white mb-4">
               Talleres de Innovación para Educación Técnica
             </h1>
             <p style={{ fontSize: '18px', color: '#E2E9FB', maxWidth: '680px' }}>
-              Talleres diseñados para liceos técnico-profesionales que quieren fortalecer sus indicadores de calidad e incorporar innovación como práctica institucional, en línea con los estándares del MINEDUC.
+              Talleres diseñados para liceos técnico-profesionales que quieren fortalecer sus indicadores de calidad e incorporar innovación como práctica institucional.
             </p>
           </div>
         </section>

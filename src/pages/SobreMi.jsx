@@ -73,7 +73,7 @@ function SobreMi() {
       <div>
 
         {/* Header */}
-        <section className="py-16" style={{ background: 'var(--gradient-night)' }}>
+        <section className="py-10" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
             <h1 className="text-4xl font-bold text-white mb-4">Sobre mí</h1>
             <p className="text-lg" style={{ color: 'var(--text-light)' }}>

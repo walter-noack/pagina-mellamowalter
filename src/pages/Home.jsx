@@ -109,7 +109,7 @@ function Home() {
               </div>
             </div>
             <div className="flex justify-end items-center" style={{ flexShrink: 0 }}>
-              <div style={{ width: '480px', height: '480px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '6px solid #DCE6FF', boxSizing: 'border-box' }}>
+              <div style={{ width: '380px', height: '380px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '8px solid #DCE6FF', boxSizing: 'border-box' }}>
                 <img
                   src="/assets/hero-walter.jpg"
                   alt="Walter Noack, ingeniero ambiental y desarrollador"

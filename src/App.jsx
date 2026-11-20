@@ -1,5 +1,11 @@
 import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -38,6 +44,7 @@ function App() {
   return (
     <Router>
       <GATracker />
+      <ScrollToTop />
       <AdminAuthProvider>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />

@@ -42,7 +42,7 @@ const PRODUCTOS_PRINCIPALES = [
   {
     nombre: 'Eria',
     url: 'https://eria.ambientapp.cl',
-    logo: '/assets/logos/eriaSN.png',
+    logo: '/assets/logos/eriaSN.webp',
     descripcion: 'Asistente de IA que interpreta la normativa ambiental chilena.',
   },
 ];

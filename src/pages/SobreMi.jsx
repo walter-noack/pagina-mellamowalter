@@ -89,7 +89,7 @@ function SobreMi() {
               {/* Foto */}
               <div className="w-full overflow-hidden rounded-lg" style={{ height: '400px' }}>
                 <img
-                  src="/images/retrato-walter.jpg"
+                  src="/images/retrato-walter.webp"
                   alt="Walter Noack"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 30%' }}

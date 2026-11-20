@@ -195,7 +195,7 @@ function Home() {
         {/* Foto — reemplazar src cuando esté lista */}
         <div className="md:w-1/2 min-h-64 overflow-hidden" style={{ background: 'var(--night-2)' }}>
           <img
-            src="/assets/codesser-buena_res.png"
+            src="/assets/codesser-buena_res.webp"
             alt="Walter Noack"
             className="w-full h-full object-cover"
             onError={(e) => { e.target.style.display = 'none'; }}

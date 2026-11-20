@@ -43,7 +43,7 @@ export default function LandingPromptsIA() {
           {/* Preview PDF */}
           <div className="flex justify-center mb-12">
             <img
-              src="/assets/prompts-ia-preview.png"
+              src="/assets/prompts-ia-preview.webp"
               alt="Portada del PDF 20 Prompts de Gestión Ambiental"
               className="w-52 h-72 object-cover border border-gray-200 rounded-xl shadow-sm"
             />

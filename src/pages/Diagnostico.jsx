@@ -204,7 +204,6 @@ function PainCarousel() {
               onClick={() => go(index - 1)}
               className="w-11 h-11 rounded-full border border-border-line hover:border-ultramarine text-ink hover:text-ultramarine flex items-center justify-center transition-colors bg-sand/30 hover:bg-white text-lg"
             >←</button>
-            <span className="font-diag-mono text-xs text-ink-muted px-2 min-w-[50px] text-center font-medium">{label}</span>
             <button
               aria-label="Siguiente"
               onClick={() => go(index + 1)}
@@ -377,7 +376,7 @@ function Diagnostico() {
                   <img
                     alt="Walter Noack — Ingeniero Ambiental y Desarrollador de Software"
                     className="w-full h-auto object-cover rounded-xl grayscale-[15%] hover:grayscale-0 transition-all duration-300 aspect-[3/4]"
-                    src="/assets/foto-diagnostico.jpg"
+                    src="/assets/foto-diagnostico.webp"
                   />
                 </div>
                 <div className="mt-4 flex items-center justify-between px-1">
@@ -483,7 +482,7 @@ function Diagnostico() {
       </section>
 
       {/* Precio */}
-      <section className="py-24 border-b border-border-line" style={{ background: '#0d1b2a' }}>
+      <section className="py-24" style={{ background: '#0d1b2a' }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="bg-white border border-border-line rounded-xl p-8 sm:p-14">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">

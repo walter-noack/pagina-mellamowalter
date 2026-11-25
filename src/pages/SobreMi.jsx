@@ -183,7 +183,7 @@ function SobreMi() {
               <figure>
                 <div className="rounded-lg overflow-hidden" style={{ height: '330px' }}>
                   <img
-                    src="/images/profesores-feria-2025.jpg"
+                    src="/images/profesores-feria-2025.webp"
                     alt="Feria de Innovación TEC-UCT 2025"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.style.display = 'none'; }}
@@ -196,7 +196,7 @@ function SobreMi() {
               <figure>
                 <div className="rounded-lg overflow-hidden" style={{ height: '330px' }}>
                   <img
-                    src="/images/stand-wantu.jpg"
+                    src="/images/stand-wantu.webp"
                     alt="Stand de Wantü"
                     className="w-full h-full object-cover"
                     onError={(e) => { e.target.style.display = 'none'; }}

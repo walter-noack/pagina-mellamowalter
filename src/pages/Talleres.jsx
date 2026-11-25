@@ -106,7 +106,7 @@ function Talleres() {
           <div className="absolute inset-0" style={{ background: 'var(--gradient-night)' }} />
           <div className="absolute inset-0 overflow-hidden">
             <img
-              src="/images/talleres-header.jpg"
+              src="/images/talleres-header.webp"
               alt="Taller de innovación con post-its y marcadores"
               className="w-full h-full object-cover"
               onError={(e) => { e.target.style.display = 'none'; }}
@@ -182,7 +182,7 @@ function Talleres() {
               </div>
               <div className="rounded-lg overflow-hidden" style={{ height: '280px' }}>
                 <img
-                  src="/images/sala-taller-estudiantes.jpg"
+                  src="/images/sala-taller-estudiantes.webp"
                   alt="Walter Noack dictando un taller de Design Thinking a estudiantes"
                   className="w-full h-full object-cover object-center"
                   onError={(e) => { e.target.style.display = 'none'; }}

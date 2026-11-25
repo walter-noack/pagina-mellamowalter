@@ -69,7 +69,7 @@ function App() {
       <AdminAuthProvider>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
-        <main className="flex-grow">
+        <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobre-mi" element={<SobreMi />} />
@@ -88,7 +88,7 @@ function App() {
             <Route path="/admin" element={<RequireAdminAuth><AdminPostsList /></RequireAdminAuth>} />
             <Route path="/admin/posts/:id" element={<RequireAdminAuth><AdminPostEditor /></RequireAdminAuth>} />
           </Routes>
-        </main>
+        </div>
         <Footer />
       </div>
       </AdminAuthProvider>

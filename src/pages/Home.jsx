@@ -111,7 +111,7 @@ function Home() {
             <div className="flex justify-end items-center" style={{ flexShrink: 0 }}>
               <div style={{ width: '380px', height: '380px', borderRadius: '50%', overflow: 'hidden', flexShrink: 0, border: '8px solid #DCE6FF', boxSizing: 'border-box' }}>
                 <img
-                  src="/assets/hero-walter.jpg"
+                  src="/assets/hero-walter.webp"
                   alt="Walter Noack, ingeniero ambiental y desarrollador"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center', filter: 'saturate(0.85) brightness(0.95)' }}
@@ -152,7 +152,7 @@ function Home() {
           <p className="mb-8" style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Imágenes referenciales</p>
           <div className="grid md:grid-cols-2 gap-6 items-stretch">
             {casos.map(({ foto, fotoAlt, tag, tagStyle, desc, metrica, detalle, franjaGradient, detalleColor }) => (
-              <div key={tag} className="flex flex-col overflow-hidden" style={{ border: '1px solid var(--border)', borderRadius: '8px' }}>
+              <div key={tag} className="flex flex-col h-full overflow-hidden" style={{ border: '1px solid var(--border)', borderRadius: '8px' }}>
                 {/* Foto */}
                 <div className="relative w-full overflow-hidden" style={{ height: '180px', background: 'var(--night-2)', borderBottom: '1px solid #E1E7F3' }}>
                   <img
@@ -229,33 +229,44 @@ function Home() {
         </div>
       </section>
 
-      {/* 6 — Otras formas de trabajar juntos */}
-      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
+      {/* 6 — Diagnóstico CTA */}
+      <section className="py-14 fade" style={{ background: 'var(--gradient-night)' }}>
         <div className="container-site">
-          <h2 className="text-2xl font-bold mb-10" style={{ color: 'var(--text-primary)' }}>
-            Otras formas de trabajar juntos
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="card-base card-hover card-base-blue">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'var(--icon-bg-blue)' }}>
-                <MagnifyingGlassIcon className="w-5 h-5" style={{ color: 'var(--brand)' }} />
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 mt-1" style={{ background: 'rgba(255,255,255,0.08)' }}>
+                <MagnifyingGlassIcon className="w-6 h-6 text-white" />
               </div>
-              <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Diagnóstico para PyMEs</h3>
-              <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Una sesión de 45 minutos para ver qué procesos conviene digitalizar y por dónde partir.
-              </p>
-              <Link to="/diagnostico" className="btn-primary text-sm">Conocer el diagnóstico</Link>
-            </div>
-            <div className="card-base card-hover card-base-blue">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'var(--icon-bg-blue)' }}>
-                <AcademicCapIcon className="w-5 h-5" style={{ color: 'var(--brand)' }} />
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: 'var(--blue-light)' }}>Punto de partida</p>
+                <h2 className="text-2xl font-bold text-white mb-2">Diagnóstico para PyMEs</h2>
+                <p style={{ fontSize: '16px', color: 'var(--text-light)', maxWidth: '540px' }}>
+                  Una sesión de 45 minutos para ver qué procesos conviene digitalizar y por dónde partir — con un informe concreto al final.
+                </p>
               </div>
-              <h3 className="font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>Talleres de innovación</h3>
-              <p className="text-sm mb-6" style={{ color: 'var(--text-secondary)' }}>
-                Para liceos y educación técnica: talleres para estudiantes y para docentes.
-              </p>
-              <Link to="/talleres" className="btn-night text-sm">Ver talleres</Link>
             </div>
+            <Link to="/diagnostico" className="btn-dark-primary shrink-0">Conocer el diagnóstico</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 6b — Talleres */}
+      <section className="py-14 fade" style={{ background: 'var(--paper)' }}>
+        <div className="container-site">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
+            <div className="flex items-start gap-5">
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center shrink-0 mt-1" style={{ background: 'var(--icon-bg-blue)' }}>
+                <AcademicCapIcon className="w-6 h-6" style={{ color: 'var(--brand)' }} />
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-widest uppercase mb-1" style={{ color: 'var(--brand)' }}>Educación técnica</p>
+                <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Talleres de innovación</h2>
+                <p style={{ fontSize: '16px', color: 'var(--text-secondary)', maxWidth: '540px' }}>
+                  Para liceos y educación técnica: talleres de Design Thinking para estudiantes y para docentes.
+                </p>
+              </div>
+            </div>
+            <Link to="/talleres" className="btn-night shrink-0">Ver talleres</Link>
           </div>
         </div>
       </section>

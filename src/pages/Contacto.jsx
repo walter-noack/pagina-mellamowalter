@@ -81,7 +81,7 @@ function Contacto() {
         </section>
 
         {/* Contacto y formulario */}
-        <section className="py-14 bg-white fade">
+        <section className="py-20 bg-white fade">
           <div className="container-site">
             <div className="grid gap-16 items-start" style={{ gridTemplateColumns: '1fr 1.2fr' }}>
 

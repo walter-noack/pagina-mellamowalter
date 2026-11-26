@@ -85,7 +85,7 @@ function SobreMi() {
         </section>
 
         {/* Presentación */}
-        <section className="py-14 bg-white fade">
+        <section className="py-20 bg-white fade">
           <div className="container-site">
             <div className="grid gap-16 items-start" style={{ gridTemplateColumns: 'clamp(300px, 460px, 460px) 1fr' }}>
               {/* Foto */}
@@ -115,7 +115,7 @@ function SobreMi() {
         </section>
 
         {/* Tres áreas */}
-        <section className="py-14 fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-20 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-4" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Tres áreas, un mismo enfoque
@@ -161,7 +161,7 @@ function SobreMi() {
         </section>
 
         {/* Innovación también en el aula */}
-        <section className="py-14 bg-white fade">
+        <section className="py-20 bg-white fade">
           <div className="container-site">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-6">
               <div className="max-w-[720px]">
@@ -213,7 +213,7 @@ function SobreMi() {
         </section>
 
         {/* CTA */}
-        <section className="py-14 fade" style={{ background: 'var(--gradient-brand)' }}>
+        <section className="py-20 fade" style={{ background: 'var(--gradient-brand)' }}>
           <div className="container-site text-center">
             <h2 className="font-bold text-white mb-3" style={{ fontSize: '32px' }}>
               ¿Conversamos?

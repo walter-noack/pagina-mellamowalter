@@ -60,7 +60,8 @@ const casos = [
     metrica: '-95%',
     detalle: 'en tiempo de proceso',
     franjaGradient: 'linear-gradient(135deg, #2F6B4F 0%, #245A41 100%)',
-    detalleColor: '#E4F0EA',
+    detalleColor: '#D6E4DC',
+    accentColor: '#9fe1cb',
   },
   {
     foto: '/assets/caso-cotizador.webp',
@@ -68,10 +69,11 @@ const casos = [
     tag: 'Cotizador centralizado',
     tagStyle: { background: 'var(--icon-bg-blue)', color: 'var(--brand)' },
     desc: 'Empresa de insumos industriales con cotizaciones repartidas en múltiples Excel. Un cotizador a medida centralizó todo en una sola plataforma.',
-    metrica: '1 plataforma',
-    detalle: 'en vez de muchos Excel sueltos',
+    metrica: 'Todo en 1',
+    detalle: 'plataforma, en vez de muchos Excel sueltos',
     franjaGradient: 'linear-gradient(135deg, #0E1B3D 0%, #16295C 100%)',
-    detalleColor: '#C9D3EA',
+    detalleColor: '#C7D2F5',
+    accentColor: '#93b4ff',
   },
 ];
 
@@ -151,32 +153,38 @@ function Home() {
           </div>
           <p className="mb-8" style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>Imágenes referenciales</p>
           <div className="grid md:grid-cols-2 gap-6 items-stretch">
-            {casos.map(({ foto, fotoAlt, tag, tagStyle, desc, metrica, detalle, franjaGradient, detalleColor }) => (
-              <div key={tag} className="flex flex-col h-full overflow-hidden" style={{ border: '1px solid var(--border)', borderRadius: '8px' }}>
-                {/* Foto */}
-                <div className="relative w-full overflow-hidden" style={{ height: '180px', background: 'var(--night-2)', borderBottom: '1px solid #E1E7F3' }}>
-                  <img
-                    src={foto}
-                    alt={fotoAlt}
-                    className="w-full h-full object-cover object-center"
-                    onError={(e) => { e.target.style.display = 'none'; }}
-                  />
-                  <div className="absolute inset-0" style={{ background: 'rgba(14,27,61,0.15)' }} />
+            {casos.map(({ foto, fotoAlt, tag, tagStyle, desc, metrica, detalle, franjaGradient, detalleColor, accentColor }) => {
+              const accentChar = accentColor ? metrica.slice(-1) : null;
+              const baseText = accentColor ? metrica.slice(0, -1) : metrica;
+              return (
+                <div key={tag} className="flex flex-col h-full overflow-hidden" style={{ border: '1px solid var(--border)', borderRadius: '8px' }}>
+                  {/* Foto */}
+                  <div className="relative w-full overflow-hidden" style={{ height: '180px', background: 'var(--night-2)', borderBottom: '1px solid #E1E7F3' }}>
+                    <img
+                      src={foto}
+                      alt={fotoAlt}
+                      className="w-full h-full object-cover object-center"
+                      onError={(e) => { e.target.style.display = 'none'; }}
+                    />
+                    <div className="absolute inset-0" style={{ background: 'rgba(14,27,61,0.15)' }} />
+                  </div>
+                  {/* Contenido */}
+                  <div className="p-6 flex-1">
+                    <span className="inline-block text-xs font-semibold px-2 py-1 rounded mb-3" style={tagStyle}>
+                      {tag}
+                    </span>
+                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
+                  </div>
+                  {/* Franja resultado */}
+                  <div className="stat" style={{ background: franjaGradient }}>
+                    <span className="stat-value text-white">
+                      {baseText}{accentChar && <span style={{ color: accentColor }}>{accentChar}</span>}
+                    </span>
+                    <span className="stat-label" style={{ color: detalleColor }}>{detalle}</span>
+                  </div>
                 </div>
-                {/* Contenido */}
-                <div className="p-6 flex-1">
-                  <span className="inline-block text-xs font-semibold px-2 py-1 rounded mb-3" style={tagStyle}>
-                    {tag}
-                  </span>
-                  <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
-                </div>
-                {/* Franja resultado */}
-                <div style={{ background: franjaGradient, padding: '20px 28px' }}>
-                  <span className="text-2xl font-bold text-white">{metrica}</span>
-                  <span className="text-sm ml-2" style={{ color: detalleColor }}>{detalle}</span>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

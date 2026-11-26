@@ -10,14 +10,22 @@ const CASOS = [
     solucion: 'Una plataforma propia que consolida los datos automáticamente.',
     cifra: '-95%',
     apoyo: 'en tiempo de proceso: de días a minutos.',
+    franjaGradient: 'linear-gradient(135deg, #2F6B4F 0%, #245A41 100%)',
+    apoyo_color: '#D6E4DC',
+    accentChar: '%',
+    accentColor: '#9fe1cb',
   },
   {
     etiqueta: 'Cotizador centralizado',
     contexto: 'Empresa de venta de insumos industriales.',
     problema: 'La información de cotizaciones estaba repartida en muchos archivos Excel sin formato.',
     solucion: 'Un cotizador a medida que centraliza todo en un solo lugar.',
-    cifra: '1 plataforma',
-    apoyo: 'información ordenada, visible y con seguimiento.',
+    cifra: 'Todo en 1',
+    apoyo: 'plataforma, en vez de muchos Excel sueltos.',
+    franjaGradient: 'linear-gradient(135deg, #0E1B3D 0%, #16295C 100%)',
+    apoyo_color: '#C7D2F5',
+    accentChar: '1',
+    accentColor: '#93b4ff',
   },
 ];
 
@@ -96,7 +104,10 @@ function Portafolio() {
             Casos destacados
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {CASOS.map(({ etiqueta, contexto, problema, solucion, cifra, apoyo }) => (
+            {CASOS.map(({ etiqueta, contexto, problema, solucion, cifra, apoyo, franjaGradient, apoyo_color, accentChar, accentColor }) => {
+              const baseText = accentChar ? cifra.slice(0, cifra.lastIndexOf(accentChar)) : cifra;
+              const accent = accentChar || null;
+              return (
               <div
                 key={etiqueta}
                 className="flex flex-col rounded-lg overflow-hidden"
@@ -126,13 +137,15 @@ function Portafolio() {
                   </div>
                 </div>
                 {/* Franja resultado */}
-                <div className="px-7 py-5" style={{ background: 'var(--gradient-brand)' }}>
-                  <p className="text-xs font-semibold text-white opacity-70 mb-1">Resultado</p>
-                  <p className="font-bold text-white mb-1" style={{ fontSize: '28px' }}>{cifra}</p>
-                  <p className="text-sm text-white opacity-80">{apoyo}</p>
+                <div className="stat" style={{ background: franjaGradient || 'var(--gradient-brand)' }}>
+                  <span className="stat-value text-white">
+                    {baseText}{accent && <span style={{ color: accentColor }}>{accent}</span>}
+                  </span>
+                  <span className="stat-label" style={{ color: apoyo_color || 'rgba(255,255,255,0.8)' }}>{apoyo}</span>
                 </div>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

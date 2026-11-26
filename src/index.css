@@ -175,3 +175,18 @@ a.link-text:hover { text-decoration: underline; }
     animation-duration: 0.01ms !important;
   }
 }
+
+/* ── Bandas de cifra de resultado ── */
+.stat { padding: 22px 18px 20px; }
+.stat-value {
+  display: block;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.stat-label { display: block; margin-top: 8px; font-size: 14px; }
+
+@media (max-width: 640px) {
+  .stat-value { font-size: 48px; }
+}

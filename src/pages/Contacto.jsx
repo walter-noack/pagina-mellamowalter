@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../components/Breadcrumb';
 import { EnvelopeIcon } from '@heroicons/react/24/outline';
 
 function LinkedInIcon() {
@@ -71,6 +72,7 @@ function Contacto() {
         {/* Header */}
         <section className="py-10" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
+            <Breadcrumb pages={[{ label: 'Contacto' }]} />
             <h1 className="text-4xl font-bold text-white mb-4">Contacto</h1>
             <p className="text-lg max-w-[640px]" style={{ color: 'var(--text-light)' }}>
               ¿Tienes una idea o un desafío que resolver? Escríbeme por el medio que prefieras.

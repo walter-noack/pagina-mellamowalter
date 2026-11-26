@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../components/Breadcrumb';
 import {
   ArrowPathIcon,
   CodeBracketIcon,
@@ -131,6 +132,7 @@ function Servicios() {
         {/* Header */}
         <section className="py-10" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
+            <Breadcrumb pages={[{ label: 'Servicios' }]} />
             <h1 className="text-4xl font-bold text-white mb-4">Servicios</h1>
             <p className="text-lg max-w-[640px]" style={{ color: 'var(--text-light)' }}>
               Ingeniero ambiental y desarrollador de soluciones tecnológicas. Digitalizo procesos y construyo herramientas a medida.

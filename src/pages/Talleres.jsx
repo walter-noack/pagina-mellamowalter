@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../components/Breadcrumb';
 import {
   AcademicCapIcon,
   UserGroupIcon,
@@ -114,6 +115,7 @@ function Talleres() {
             <div className="absolute inset-0" style={{ background: 'rgba(14,27,61,0.65)' }} />
           </div>
           <div className="container-site relative">
+            <Breadcrumb pages={[{ label: 'Talleres' }]} />
             <h1 className="text-4xl font-bold text-white mb-4">
               Talleres de Innovación para Educación Técnica
             </h1>

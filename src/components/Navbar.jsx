@@ -15,7 +15,7 @@ function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <nav style={{ background: 'var(--night)' }} className="sticky top-0 z-50 relative">
+    <nav style={{ background: 'var(--night)' }} className="sticky top-0 z-50">
       <div className="container-site">
         <div className="flex justify-between items-center" style={{ height: '72px' }}>
 
@@ -68,8 +68,8 @@ function Navbar() {
       {/* Mobile menu — flota sobre el contenido */}
       {isOpen && (
         <div
-          className="md:hidden absolute left-0 right-0 z-50 border-t shadow-lg"
-          style={{ top: '100%', background: 'var(--night)', borderColor: 'rgba(255,255,255,0.08)' }}
+          className="md:hidden fixed left-0 right-0 z-50 border-t shadow-lg"
+          style={{ top: '72px', background: 'var(--night)', borderColor: 'rgba(255,255,255,0.08)' }}
         >
           <div className="container-site py-4">
             {links.map(({ to, label }) => (

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import Breadcrumb from '../components/Breadcrumb';
 import {
   BriefcaseIcon,
   LightBulbIcon,
@@ -75,6 +76,7 @@ function SobreMi() {
         {/* Header */}
         <section className="py-10" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
+            <Breadcrumb pages={[{ label: 'Sobre mí' }]} />
             <h1 className="text-4xl font-bold text-white mb-4">Sobre mí</h1>
             <p className="text-lg" style={{ color: 'var(--text-light)' }}>
               Ingeniero ambiental, desarrollador y docente.

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/outline';
+import Breadcrumb from '../components/Breadcrumb';
 
 const CASOS = [
   {
@@ -80,6 +81,7 @@ function Portafolio() {
       {/* Header */}
       <section className="py-10" style={{ background: 'var(--gradient-night)' }}>
         <div className="container-site">
+          <Breadcrumb pages={[{ label: 'Portafolio' }]} />
           <h1 className="text-4xl font-bold text-white mb-4">Portafolio</h1>
           <p className="text-lg max-w-xl" style={{ color: 'var(--text-light)' }}>
             Productos propios y sitios web desarrollados.

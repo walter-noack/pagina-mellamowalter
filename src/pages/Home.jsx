@@ -9,8 +9,8 @@ import {
 function LeafIcon({ className, style }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} style={style} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" stroke="#2F6B4F" />
-      <path d="M12 21V10" stroke="#2F6B4F" />
+      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" style={{ stroke: 'var(--forest)' }} />
+      <path d="M12 21V10" style={{ stroke: 'var(--forest)' }} />
     </svg>
   );
 }
@@ -55,11 +55,11 @@ const casos = [
     foto: '/assets/caso-residuos.webp',
     fotoAlt: 'Contenedores y cajas de residuos, imagen referencial',
     tag: 'Automatización de residuos',
-    tagStyle: { background: '#E4F0EA', color: '#2F6B4F' },
+    tagStyle: { background: 'var(--icon-bg-green)', color: 'var(--forest)' },
     desc: 'Contabilización mensual de residuos: de planillas de miles de filas que tomaban días, a una plataforma que lo resuelve en minutos.',
     metrica: '-95%',
     detalle: 'en tiempo de proceso',
-    franjaGradient: 'linear-gradient(135deg, #2F6B4F 0%, #245A41 100%)',
+    franjaGradient: 'var(--gradient-forest)',
     detalleColor: '#D6E4DC',
     accentColor: '#9fe1cb',
   },

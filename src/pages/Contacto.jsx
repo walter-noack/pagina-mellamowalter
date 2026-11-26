@@ -145,7 +145,7 @@ function Contacto() {
                 </h2>
 
                 {mensajeExito && (
-                  <div className="rounded-lg px-4 py-3 mb-5 text-sm" style={{ background: '#E4F0EA', color: 'var(--forest)', border: '1px solid #B2D9C4' }}>
+                  <div className="rounded-lg px-4 py-3 mb-5 text-sm" style={{ background: 'var(--icon-bg-green)', color: 'var(--forest)', border: '1px solid var(--forest-border)' }}>
                     Mensaje enviado correctamente. Te contactaré pronto.
                   </div>
                 )}

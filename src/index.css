@@ -11,7 +11,10 @@
   --paper:          #F6F8FC;
   --white:          #FFFFFF;
   --forest:         #2F6B4F;
+  --forest-dark:    #245A41;
   --forest-light:   #8FD3B0;
+  --forest-border:  #B2D9C4;
+  --gradient-forest: linear-gradient(135deg, #2F6B4F 0%, #245A41 100%);
   --blue-light:     #9DB8FF;
   --text-light:     #C9D3EA;
   --text-secondary-dark: #9FB0D8;

@@ -9,8 +9,8 @@ import {
 function LeafIcon({ className, style }) {
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} style={style} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" stroke="#2F6B4F" />
-      <path d="M12 21V10" stroke="#2F6B4F" />
+      <path d="M12 21c-4-3-7-6-7-10a7 7 0 0 1 14 0c0 4-3 7-7 10Z" style={{ stroke: 'var(--forest)' }} />
+      <path d="M12 21V10" style={{ stroke: 'var(--forest)' }} />
     </svg>
   );
 }

@@ -10,7 +10,7 @@ const CASOS = [
     solucion: 'Una plataforma propia que consolida los datos automáticamente.',
     cifra: '-95%',
     apoyo: 'en tiempo de proceso: de días a minutos.',
-    franjaGradient: 'linear-gradient(135deg, #2F6B4F 0%, #245A41 100%)',
+    franjaGradient: 'var(--gradient-forest)',
     apoyo_color: '#D6E4DC',
     accentChar: '%',
     accentColor: '#9fe1cb',

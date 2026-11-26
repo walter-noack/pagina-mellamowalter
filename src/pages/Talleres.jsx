@@ -103,7 +103,7 @@ function Talleres() {
       <div>
 
         {/* Header con foto */}
-        <section className="relative py-10">
+        <section className="relative py-6">
           <div className="absolute inset-0" style={{ background: 'var(--gradient-night)' }} />
           <div className="absolute inset-0 overflow-hidden">
             <img
@@ -116,7 +116,7 @@ function Talleres() {
           </div>
           <div className="container-site relative">
             <Breadcrumb pages={[{ label: 'Talleres' }]} />
-            <h1 className="text-4xl font-bold text-white mb-4">
+            <h1 className="text-4xl font-bold text-white mb-2">
               Talleres de Innovación para Educación Técnica
             </h1>
             <p style={{ fontSize: '18px', color: '#E2E9FB', maxWidth: '680px' }}>

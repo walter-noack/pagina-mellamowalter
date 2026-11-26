@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 function Breadcrumb({ pages }) {
   return (
-    <nav aria-label="breadcrumb" className="mb-4">
+    <nav aria-label="breadcrumb" className="mb-2">
       <ol className="flex items-center gap-1 text-sm flex-wrap">
         <li>
           <Link

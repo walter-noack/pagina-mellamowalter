@@ -126,7 +126,7 @@ function Talleres() {
         </section>
 
         {/* Talleres */}
-        <section className="py-20 bg-white fade">
+        <section className="py-16 bg-white fade">
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-6">
               <TallerColumna
@@ -144,7 +144,7 @@ function Talleres() {
         </section>
 
         {/* Formatos */}
-        <section className="py-20 fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-6" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Formatos
@@ -168,7 +168,7 @@ function Talleres() {
         </section>
 
         {/* Respaldo */}
-        <section className="py-20 fade" style={{ background: 'var(--gradient-night)' }}>
+        <section className="py-16 fade" style={{ background: 'var(--gradient-night)' }}>
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>

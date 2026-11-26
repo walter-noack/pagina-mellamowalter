@@ -141,7 +141,7 @@ function Servicios() {
         </section>
 
         {/* Servicios */}
-        <section className="py-20 fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-6">
               {servicios.map(({ Icon, titulo, problema, entregable, variante }) => (
@@ -169,7 +169,7 @@ function Servicios() {
         </section>
 
         {/* Cómo trabajo */}
-        <section className="py-20 bg-white fade">
+        <section className="py-16 bg-white fade">
           <div className="container-site">
             <h2 className="font-bold mb-3" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo trabajo
@@ -194,7 +194,7 @@ function Servicios() {
         </section>
 
         {/* Cómo se define el valor + diagnóstico */}
-        <section className="py-20 fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-4" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo se define el valor
@@ -226,7 +226,7 @@ function Servicios() {
         </section>
 
         {/* Preguntas frecuentes */}
-        <section className="py-20 bg-white fade">
+        <section className="py-16 bg-white fade">
           <div className="container-site">
             <h2 className="font-bold mb-6" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Preguntas frecuentes

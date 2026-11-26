@@ -98,7 +98,7 @@ function Portafolio() {
       </section>
 
       {/* Casos destacados */}
-      <section className="py-20 bg-white fade">
+      <section className="py-12 bg-white fade">
         <div className="container-site">
           <h2 className="font-bold mb-6" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
             Casos destacados
@@ -151,7 +151,7 @@ function Portafolio() {
       </section>
 
       {/* Productos propios */}
-      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
+      <section className="py-12 fade" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Productos propios</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Software desarrollado y mantenido de forma independiente.</p>
@@ -209,7 +209,7 @@ function Portafolio() {
       </section>
 
       {/* Sitios web */}
-      <section className="py-16 bg-white fade">
+      <section className="py-12 bg-white fade">
         <div className="container-site">
           <h2 className="text-2xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>Sitios web desarrollados</h2>
           <p className="text-sm mb-8" style={{ color: 'var(--text-secondary)' }}>Proyectos desarrollados para clientes.</p>

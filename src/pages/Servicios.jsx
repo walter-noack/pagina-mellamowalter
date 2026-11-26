@@ -141,7 +141,7 @@ function Servicios() {
         </section>
 
         {/* Servicios */}
-        <section className="py-[72px] fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-14 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <div className="grid md:grid-cols-2 gap-6">
               {servicios.map(({ Icon, titulo, problema, entregable, variante }) => (
@@ -169,12 +169,12 @@ function Servicios() {
         </section>
 
         {/* Cómo trabajo */}
-        <section className="py-[72px] bg-white fade">
+        <section className="py-14 bg-white fade">
           <div className="container-site">
             <h2 className="font-bold mb-3" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo trabajo
             </h2>
-            <p className="mb-10" style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>
+            <p className="mb-6" style={{ fontSize: '17px', color: 'var(--text-secondary)' }}>
               Un proceso simple, con avances que puedes ver en cada etapa.
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -194,12 +194,12 @@ function Servicios() {
         </section>
 
         {/* Cómo se define el valor + diagnóstico */}
-        <section className="py-[72px] fade" style={{ background: 'var(--paper)' }}>
+        <section className="py-14 fade" style={{ background: 'var(--paper)' }}>
           <div className="container-site">
             <h2 className="font-bold mb-4" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Cómo se define el valor
             </h2>
-            <p className="mb-10 max-w-[760px]" style={{ fontSize: '18px', color: 'var(--text-primary)' }}>
+            <p className="mb-6 max-w-[760px]" style={{ fontSize: '18px', color: 'var(--text-primary)' }}>
               Cada proyecto se cotiza según su alcance, después de entender tu caso. Si quieres partir con algo acotado y de costo conocido, el diagnóstico es la puerta de entrada.
             </p>
             {/* Bloque diagnóstico */}
@@ -226,9 +226,9 @@ function Servicios() {
         </section>
 
         {/* Preguntas frecuentes */}
-        <section className="py-[72px] bg-white fade">
+        <section className="py-14 bg-white fade">
           <div className="container-site">
-            <h2 className="font-bold mb-10" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
+            <h2 className="font-bold mb-6" style={{ fontSize: '32px', color: 'var(--text-primary)' }}>
               Preguntas frecuentes
             </h2>
             <div className="grid md:grid-cols-2 gap-6">

@@ -125,9 +125,9 @@ function Home() {
       </section>
 
       {/* 2 — En qué puedo ayudarte */}
-      <section className="py-16 bg-white fade">
+      <section className="py-12 bg-white fade">
         <div className="container-site">
-          <h2 className="text-2xl font-bold mb-10" style={{ color: 'var(--text-primary)' }}>
+          <h2 className="text-2xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>
             ¿En qué puedo ayudarte?
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -145,7 +145,7 @@ function Home() {
       </section>
 
       {/* 3 — Casos reales */}
-      <section className="py-16 fade" style={{ background: 'var(--paper)' }}>
+      <section className="py-12 fade" style={{ background: 'var(--paper)' }}>
         <div className="container-site">
           <div className="flex items-center justify-between mb-2">
             <h2 className="text-2xl font-bold" style={{ color: 'var(--text-primary)' }}>Casos reales</h2>
@@ -192,7 +192,7 @@ function Home() {
       {/* 4 — Banda foto */}
       <section className="min-h-64 flex flex-col md:flex-row fade">
         {/* Texto */}
-        <div className="md:w-1/2 flex items-center py-16 px-10" style={{ background: 'var(--gradient-night)' }}>
+        <div className="md:w-1/2 flex items-center py-12 px-10" style={{ background: 'var(--gradient-night)' }}>
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4" style={{ lineHeight: 1.3 }}>
               Más de 10 años resolviendo problemas ambientales. Hoy los resuelvo con tecnología.
@@ -212,7 +212,7 @@ function Home() {
       </section>
 
       {/* 5 — Trayectoria */}
-      <section className="py-16 fade" style={{ background: 'var(--night)' }}>
+      <section className="py-12 fade" style={{ background: 'var(--night)' }}>
         <div className="container-site">
           <div className="flex flex-col md:flex-row gap-12">
             {/* Columna izq */}
